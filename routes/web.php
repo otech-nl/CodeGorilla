@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ZooController@welcome');
+Route::get('/animals', 'ZooController@animals');

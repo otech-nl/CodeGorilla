@@ -1,14 +1,15 @@
-# CodeGorilla PHP Bootcamp voorbeeld-code
+# CodeGorilla PHP Bootcamp: Dierentuin
 
-In deze repository vind je Laravel-voorbeelden die zijn gebruikt voor de PHP-bootcamp van [CodeGorilla](https://www.codegorilla.nl/).
+We gaan de kale Laravel-installatie aanpassen voor een dierentuin die een overzicht wil tonen van de dieren die ze hebben.
 
-Elk voorbeeld-project begint in een aparte branch op basis van een kale Laravel-installatie, die is verkregen door de volgende stappen:
+## De frontend
 
-1. installeer [PHP7](http://www.php.net/), [composer](https://getcomposer.org/) en [MySQL](https://dev.mysql.com/)
-2. `composer global require laravel/installer`
-3. `laravel new zoo`
-4. `cd zoo`
-
-Om de voorbeelden te tonen in je browser dien je vanaf de command line (bijvoorbeeld `git bash`, `powershell` of `cmd`) in je projectdirectory het commando `php artisan serve` (continu) te laten draaien. Je kunt het voorbeeld dan bekijken in je browser via [http://localhost:8000] (soms werk alleen [http://127.0.0.1:8000]).
-
-Ga naar één van de branches om de voorbeeld-projecten te bekijken. Per stap is een commit gemaakt.
+1. dierenoverzicht toevoegen (in `resources/views/`)
+   - kopieer `welcome.blade.php` naar `base.blade.php`
+   - edit `base.blade.php`
+   - edit `welcome.blade.php`
+   - edit `animals.blade.php`
+2. `php artisan make:controller ZooController`
+   - edit `app/Http/Controllers/ZooController.php`
+   - edit `routes/web.php`
+   - `php artisan route:list`
