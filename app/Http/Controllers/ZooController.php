@@ -11,7 +11,7 @@ class ZooController extends Controller
     }
 
     function animals() {
-        return view('animals');
+        return view('animals', ['animals' => \App\Animal::all()]);
     }
 
 }
