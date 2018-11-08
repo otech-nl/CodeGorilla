@@ -6,6 +6,6 @@
     </div>
 
     @foreach ($animals as $animal)
-        <li>{{ $animal->name }}</li>
+        <li>{{ $animal->naam }} ({{$animal->soort}})</li>
     @endforeach
 @endsection

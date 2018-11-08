@@ -29,3 +29,14 @@ We gaan de kale Laravel-installatie aanpassen voor een dierentuin die een overzi
 ### De frontend
 
 1. pas animals.blade.php aan
+
+## Wijziging: soort toevoegen
+
+Na een demo bij de opdrachtgever, blijken we ze verkeerd begrepen te hebben: de namen hadden soortnamen moeten zijn (naast de individuele namen) en de databasekolommen hadden in het Nederlands gemoeten:
+
+1. `php artisan make:migration AddBreedToAnimal`
+   - om te voorkomen dat we alle soortnamen moeten kopiëren, veranderen de de kolom `name` in `soort` en voegen we een kolom `naam` toe.
+2. `php artisan migrate`
+   - voeg eerst `"doctrine/dbal": "~2.3"` toe aan `composer.json` en run `composer update` (dit is nodig voor de `renameColumn`)
+3. pas dieren aan (database)
+4. pas `animals.blade.php` aan
