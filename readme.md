@@ -1,19 +1,25 @@
-# CodeGorilla PHP Bootcamp voorbeeld-code
+# CodeGorilla PHP Bootcamp: REST API
 
-In deze repository vind je Laravel-voorbeelden die zijn gebruikt voor de PHP-bootcamp van [CodeGorilla](https://www.codegorilla.nl/). Om deze voorbeelden zelf uit te kunnen voeren moeten [PHP7](http://www.php.net/), [composer](https://getcomposer.org/) en [MySQL](https://dev.mysql.com/) op je computer zijn geïnstalleerd.
+Deze REST API komt voort uit de volgende stappen:
 
-Elk voorbeeld-project begint in een aparte branch op basis van een kale Laravel-installatie, die is verkregen door de volgende stappen:
+    php artisan make:model Ad -m
+    <edit migration>
+    php artisan migrate
+    
+    php make:seeder AdSeeder
+    <edit seeder>
+    composer dumpautoload 
+    php db:seed
 
-1. `composer global require laravel/installer`
-2. `laravel new CodeGorilla`
-3. `cd CodeGorilla`
+    php artisan make:resource AdResource
+    php artisan make:resource AdCollection
+    php artisan make:controller API/AdController --api --model=Ad
+    <edit>
 
-Je kunt de code op je eigen computer zetten met:
+In `routes/web.php`:
 
-1. `git clone git@github.com:otech-nl/CodeGorilla.git`
-2. `cd CodeGorilla`
-3. `composer install`
+    Route::apiResource('api/ad', 'API\AdController');
 
-Om de voorbeelden te tonen in je browser dien je vanaf de command line (bijvoorbeeld `git bash`, `powershell` of `cmd`) in je projectdirectory het commando `php artisan serve` (continu) te laten draaien. Je kunt het voorbeeld dan bekijken in je browser via [http://localhost:8000]() (soms werk alleen [http://127.0.0.1:8000]()).
+Na deze stap kan je de api testen met `http://localhost:8000/api/ad`
 
-Ga naar één van de branches om de voorbeeld-projecten te bekijken. Per stap is een commit gemaakt.
+Als je API werkt, kan je via `http://localhost:8000/` bekijken wat je er mee kunt (gebruik `welcome.blade.php`)
