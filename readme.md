@@ -8,12 +8,14 @@ Ga naar `Tools > Extensions and updates... > Online` en installeer _PHP Tools fo
 
 ## Testing
 
-### Unit tests
+### Vooraf
 
-Maak en vul de database:
+De tests gaan er van uit dat een database is aangemaakt (e.g. via PhpMyAdmin) en daarna geïnitialiseerd:
 
     php artisan migrate
     php artisan db:seed
+
+### Unit test
 
 Voeg PHPUnit toe:
 
@@ -25,4 +27,20 @@ Voer de test uit:
 
 De test is gemaakt met:
 
-    php artisan make:test UserTest --unit
+    php artisan make:test AnimalTest --unit
+
+### Browser test
+
+Voeg Dusk toe:
+
+    composer require --dev laravel/dusk
+    php artisan dusk:install
+
+Voer de test uit:
+
+    php artisan dusk
+
+
+De test is gemaakt met:
+
+    php artisan make:test AnimalTest
